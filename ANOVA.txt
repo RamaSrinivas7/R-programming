@@ -1,0 +1,4 @@
+anova_result <- aov(Scores ~ Group, data = df)
+summary(anova_result)
+anova_result <- aov(Scores ~ Factor1 * Factor2, data = df)
+summary(anova_result)

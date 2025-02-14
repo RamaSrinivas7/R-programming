@@ -1,0 +1,15 @@
+fact=function(){
+  n=4
+  if (n<0){
+    print("no fact for -ve")
+  } else if (n==0) {
+    print("Factorial = 1")
+      } else {
+    result=1
+    for (i in 1:n) {
+      result=result*i
+    }
+    print(result)
+  }
+} 
+fact()

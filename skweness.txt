@@ -1,0 +1,2 @@
+library(e1071)  # Install if needed: install.packages("e1071")
+skewness_value <- skewness(data_vector, na.rm = TRUE)

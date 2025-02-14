@@ -1,0 +1,1 @@
+max_value <- max(data_vector, na.rm = TRUE)

@@ -1,0 +1,15 @@
+
+set.seed(123)  
+student_data <- data.frame(
+  StudyHours = c(5, 3, 8, 2, 7, 6, 1, 4, 9, 6, 2, 5, 4, 7, 3),  # Hours spent studying
+  Attendance = c(90, 75, 95, 60, 85, 80, 50, 65, 98, 80, 65, 90, 70, 95, 85),  
+  Pass = c(1, 0, 1, 0, 1, 1, 0, 0, 1, 1, 0, 1, 0, 1, 0)  # 1 = Passed, 0 = Failed
+)
+head(student_data)
+logistic_model <- glm(Pass ~ StudyHours + Attendance, data = student_data, family = "binomial")
+summary(logistic_model)
+predicted_probs <- predict(logistic_model, type = "response")
+predicted_probs
+predicted_classes <- ifelse(predicted_probs > 0.5, 1, 0)
+predicted_classes
+table(Predicted = predicted_classes, Actual = student_data$Pass)

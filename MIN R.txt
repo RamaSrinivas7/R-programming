@@ -1,0 +1,1 @@
+min_value <- min(data_vector, na.rm = TRUE)

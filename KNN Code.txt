@@ -1,0 +1,17 @@
+library(class)
+data(iris)
+set.seed(123) 
+train_index <- sample(1:nrow(iris), 0.7 * nrow(iris))  
+train_data <- iris[train_index, ]
+test_data <- iris[-train_index, ]
+train_labels <- train_data$Species
+train_features <- train_data[, -5]  
+test_labels <- test_data$Species
+test_features <- test_data[, -5]  
+k_value <- 3
+knn_predictions <- knn(train = train_features, test = test_features, cl = train_labels, k = k_value)
+print(knn_predictions)
+confusion_matrix <- table(Predicted = knn_predictions, Actual = test_labels)
+print(confusion_matrix)
+accuracy <- sum(diag(confusion_matrix)) / sum(confusion_matrix)
+print(paste("Accuracy:", accuracy))

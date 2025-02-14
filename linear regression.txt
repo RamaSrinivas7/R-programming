@@ -1,0 +1,7 @@
+set.seed(123)
+weather_data<-data.frame(temp=rnorm(100,mean=25,sd=5),humidity=rnorm(100,mean=60,sd=10))
+linear_model<-lm(temp~humidity,data=weather_data)
+summary(linear_model)
+plot(weather_data$humidity,weather_data$temp,main="linear regression:temp vs humidity",
+xlab="humidity(%)",ylab="temperature(C)",pch=19,col="blue")
+abline(linear_model,col="red")

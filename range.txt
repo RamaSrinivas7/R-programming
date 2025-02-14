@@ -1,0 +1,2 @@
+range_value <- range(data_vector, na.rm = TRUE) # Returns min and max
+range_diff <- diff(range(data_vector, na.rm = TRUE)) # Returns max - min

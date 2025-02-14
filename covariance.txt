@@ -1,0 +1,1 @@
+cov(df$var1, df$var2, use = "complete.obs")

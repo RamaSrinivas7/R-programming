@@ -1,0 +1,3 @@
+data <- data.frame(Gender = c("Male", "Female", "Male", "Female", "Male"),
+                   Passed = c("Yes", "No", "Yes", "Yes", "No"))
+table(data$Gender, data$Passed)

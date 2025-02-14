@@ -1,0 +1,1 @@
+variance_value <- var(data_vector, na.rm = TRUE)

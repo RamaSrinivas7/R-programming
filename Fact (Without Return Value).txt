@@ -1,0 +1,8 @@
+fact<- function(n) {
+  result=1
+  for (i in 2:n) {
+    result=result*i
+  }
+  print(result)
+}
+fact(5) 

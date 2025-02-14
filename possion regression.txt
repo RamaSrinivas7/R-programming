@@ -1,0 +1,19 @@
+library(ggplot2)
+set.seed(123)  
+rainfall_data <- data.frame(
+  RainyDays = rpois(100, lambda = 5),    # Random number of rainy days, Poisson-distributed
+  Temperature = rnorm(100, mean = 25, sd = 5),  # Simulated temperature in Celsius
+  Humidity = rnorm(100, mean = 75, sd = 10)   # Simulated humidity in percentage
+)
+head(rainfall_data)
+poisson_model <- glm(RainyDays ~ Temperature + Humidity, 
+                     data = rainfall_data, 
+                     family = "poisson")
+summary(poisson_model)
+predicted_rainy_days <- predict(poisson_model, type = "response")
+head(predicted_rainy_days)
+ggplot(rainfall_data, aes(x = predicted_rainy_days, y = RainyDays)) +
+  geom_point(color = "blue") +
+  geom_smooth(method = "lm", color = "red") +
+  labs(title = "Poisson Regression: Observed vs. Predicted Rainy Days",
+       x = "Predicted Rainy Days", y = "Observed Rainy Days")

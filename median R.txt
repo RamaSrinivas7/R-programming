@@ -1,0 +1,1 @@
+median_value <- median(data_vector, na.rm = TRUE)
